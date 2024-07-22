@@ -89,15 +89,8 @@ class Order extends Component {
     this.apiGetOrders();
   }
   // event-handlers
-  lnkApproveClick(id) {
-    this.apiPutOrderStatus(id, 'APPROVED');
-  }
-  lnkCancelClick(id) {
-    this.apiPutOrderStatus(id, 'CANCELED');
-  }
   trItemClick(item) {
     this.setState({ order: item });
-    
   }
   // apis
   apiGetOrders() {
@@ -107,6 +100,14 @@ class Order extends Component {
       this.setState({ orders: result });
     });
   }
+  // event-handlers
+  lnkApproveClick(id) {
+    this.apiPutOrderStatus(id, 'APPROVED');
+  }
+  lnkCancelClick(id) {
+    this.apiPutOrderStatus(id, 'CANCELED');
+  }
+  // apis
   apiPutOrderStatus(id, status) {
     const body = { status: status };
     const config = { headers: { 'x-access-token': this.context.token } };

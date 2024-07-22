@@ -14,29 +14,36 @@ class Signup extends Component {
   }
   render() {
     return (
-      <div className="align-center">
-        <h2 className="text-center">SIGN-UP</h2>
+  
+      <div className="align-center x">
+        <table>
+          <tr>
+          <th className='bg-sign-up'>    
+          
+          </th>
+        <th>
+        <h2 className="text-center cuslogin">SIGN-UP</h2>
         <form>
           <table className="align-center">
             <tbody>
               <tr>
-                <td>Username</td>
+                <td className='cuslogin'>Username</td>
                 <td><input type="text" value={this.state.txtUsername} onChange={(e) => { this.setState({ txtUsername: e.target.value }) }} /></td>
               </tr>
               <tr>
-                <td>Password</td>
+                <td className='cuslogin'>Password</td>
                 <td><input type="password" value={this.state.txtPassword} onChange={(e) => { this.setState({ txtPassword: e.target.value }) }} /></td>
               </tr>
               <tr>
-                <td>Name</td>
+                <td className='cuslogin'>Name</td>
                 <td><input type="text" value={this.state.txtName} onChange={(e) => { this.setState({ txtName: e.target.value }) }} /></td>
               </tr>
               <tr>
-                <td>Phone</td>
+                <td className=''>Phone</td>
                 <td><input type="tel" value={this.state.txtPhone} onChange={(e) => { this.setState({ txtPhone: e.target.value }) }} /></td>
               </tr>
               <tr>
-                <td>Email</td>
+                <td className='cuslogin'>Email</td>
                 <td><input type="email" value={this.state.txtEmail} onChange={(e) => { this.setState({ txtEmail: e.target.value }) }} /></td>
               </tr>
               <tr>
@@ -46,6 +53,9 @@ class Signup extends Component {
             </tbody>
           </table>
         </form>
+        </th>
+        </tr>
+        </table>
       </div>
     );
   }

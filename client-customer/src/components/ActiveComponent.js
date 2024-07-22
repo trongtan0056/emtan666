@@ -11,17 +11,17 @@ class Active extends Component {
   }
   render() {
     return (
-      <div className="align-center">
-        <h2 className="text-center">ACTIVE ACCOUNT</h2>
+      <div className="align-center active-bg">
+        <h2 className="text-center color-tx">ACTIVE ACCOUNT</h2>
         <form>
           <table className="align-center">
             <tbody>
               <tr>
-                <td>ID</td>
+                <td className='color-tx'>ID</td>
                 <td><input type="text" value={this.state.txtID} onChange={(e) => { this.setState({ txtID: e.target.value }) }} /></td>
               </tr>
               <tr>
-                <td>Token</td>
+                <td className='color-tx'>Token</td>
                 <td><input type="text" value={this.state.txtToken} onChange={(e) => { this.setState({ txtToken: e.target.value }) }} /></td>
               </tr>
               <tr>

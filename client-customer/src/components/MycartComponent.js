@@ -59,7 +59,8 @@ class Mycart extends Component {
       this.context.setMycart(mycart);
     }
   }
-  lnkCheckoutClick() {
+   // event-handlers
+   lnkCheckoutClick() {
     if (window.confirm('ARE YOU SURE?')) {
       if (this.context.mycart.length > 0) {
         const total = CartUtil.getTotal(this.context.mycart);
@@ -91,6 +92,4 @@ class Mycart extends Component {
     });
   }
 }
-
-
 export default withRouter(Mycart);

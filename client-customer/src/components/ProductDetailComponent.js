@@ -45,8 +45,8 @@ class ProductDetail extends Component {
                     <td><input type="number" min="1" max="99" value={this.state.txtQuantity} onChange={(e) => { this.setState({ txtQuantity: e.target.value }) }} /></td>
                     </tr>
                     <tr>
-                      <td></td>
-                      <td><input type="submit" value="ADD TO CART" onClick={(e) => this.btnAdd2CartClick(e)} /></td>
+                    <td></td>
+                    <td><input type="submit" value="ADD TO CART" onClick={(e) => this.btnAdd2CartClick(e)} /></td>
                     </tr>
                   </tbody>
                 </table>
@@ -61,6 +61,13 @@ class ProductDetail extends Component {
   componentDidMount() {
     const params = this.props.params;
     this.apiGetProduct(params.id);
+  }
+  // apis
+  apiGetProduct(id) {
+    axios.get('/api/customer/products/' + id).then((res) => {
+      const result = res.data;
+      this.setState({ product: result });
+    });
   }
   // event-handlers
   btnAdd2CartClick(e) {
@@ -82,12 +89,5 @@ class ProductDetail extends Component {
       alert('Please input quantity');
     }
   }
-  // apis
-  apiGetProduct(id) {
-    axios.get('/api/customer/products/' + id).then((res) => {
-      const result = res.data;
-      this.setState({ product: result });
-    });
-  }
-}
+} 
 export default withRouter(ProductDetail);

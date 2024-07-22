@@ -40,28 +40,11 @@ class CategoryDetail extends Component {
       </div>
     );
   }
-  // event-handlers
-  btnDeleteClick(e) {
-    e.preventDefault();
-    if (window.confirm('ARE YOU SURE?')) {
-      const id = this.state.txtID;
-      if (id) {
-        this.apiDeleteCategory(id);
-      } else {
-        alert('Please input id');
-      }
+  componentDidUpdate(prevProps) {
+    if (this.props.item !== prevProps.item) {
+      this.setState({ txtID: this.props.item._id, txtName: this.props.item.name });
     }
-  }
-  btnUpdateClick(e) {
-    e.preventDefault();
-    const id = this.state.txtID;
-    const name = this.state.txtName;
-    if (id && name) {
-      const cate = { name: name };
-      this.apiPutCategory(id, cate);
-    } else {
-      alert('Please input id and name');
-    }
+    
   }
   btnAddClick(e) {
     e.preventDefault();
@@ -74,30 +57,6 @@ class CategoryDetail extends Component {
     }
   }
   // apis
-  apiDeleteCategory(id) {
-    const config = { headers: { 'x-access-token': this.context.token } };
-    axios.delete('/api/admin/categories/' + id, config).then((res) => {
-      const result = res.data;
-      if (result) {
-        alert('OK BABY!');
-        this.apiGetCategories();
-      } else {
-        alert('SORRY BABY!');
-      }
-    });
-  }
-  apiPutCategory(id, cate) {
-    const config = { headers: { 'x-access-token': this.context.token } };
-    axios.put('/api/admin/categories/' + id, cate, config).then((res) => {
-      const result = res.data;
-      if (result) {
-        alert('OK BABY!');
-        this.apiGetCategories();
-      } else {
-        alert('SORRY BABY!');
-      }
-    });
-  }
   apiPostCategory(cate) {
     const config = { headers: { 'x-access-token': this.context.token } };
     axios.post('/api/admin/categories', cate, config).then((res) => {
@@ -117,10 +76,55 @@ class CategoryDetail extends Component {
       this.props.updateCategories(result);
     });
   }
-  componentDidUpdate(prevProps) {
-    if (this.props.item !== prevProps.item) {
-      this.setState({ txtID: this.props.item._id, txtName: this.props.item.name });
+   // event-handlers
+   btnUpdateClick(e) {
+    e.preventDefault();
+    const id = this.state.txtID;
+    const name = this.state.txtName;
+    if (id && name) {
+      const cate = { name: name };
+      this.apiPutCategory(id, cate);
+    } else {
+      alert('Please input id and name');
     }
+  }
+  // apis
+  apiPutCategory(id, cate) {
+    const config = { headers: { 'x-access-token': this.context.token } };
+    axios.put('/api/admin/categories/' + id, cate, config).then((res) => {
+      const result = res.data;
+      if (result) {
+        alert('OK BABY!');
+        this.apiGetCategories();
+      } else {
+        alert('SORRY BABY!');
+      }
+    });
+  }
+  // event-handlers
+  btnDeleteClick(e) {
+    e.preventDefault();
+    if (window.confirm('ARE YOU SURE?')) {
+      const id = this.state.txtID;
+      if (id) {
+        this.apiDeleteCategory(id);
+      } else {
+        alert('Please input id');
+      }
+    }
+  }
+  // apis
+  apiDeleteCategory(id) {
+    const config = { headers: { 'x-access-token': this.context.token } };
+    axios.delete('/api/admin/categories/' + id, config).then((res) => {
+      const result = res.data;
+      if (result) {
+        alert('OK BABY!');
+        this.apiGetCategories();
+      } else {
+        alert('SORRY BABY!');
+      }
+    });
   }
 }
 export default CategoryDetail;

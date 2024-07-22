@@ -25,7 +25,12 @@ const CategoryDAO = {
   async delete(_id) {
     const result = await Models.Category.findByIdAndDelete(_id);
     return result;
-  }
+  },
+  async selectByCount () {
+  const query ={};
+  const noCategories= await Models. Category. find (query).count().exec();
+  return noCategories;
+}
 };
 
 

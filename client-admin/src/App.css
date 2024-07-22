@@ -1,3 +1,55 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Viền chuyển động lữa*/
+@keyframes fire-glow {
+  0%{ box-shadow: 0 0 10px #f00, 0 0 20px #f60,0 0 30px #f90; }
+  50%{ box-shadow: 0 0 20px #f60, 0 0 30px #f90,0 0 40px #fa0; }
+  100%{ box-shadow: 0 0 10px #f00, 0 0 20px #f60,0 0 30px #f90; }
+}
+.fire-border{
+  border: 5px solid transparent;
+  border-image: radial-gradient(circle, #f90 , transparent);
+  border-image-slice: 1;
+  animation: fire-glow 2s linear infinite;
+}
+
 /* styles.css */
 .body-customer {
   width: 1150px;
@@ -30,29 +82,36 @@ figure.caption-right {
 }
 .text-center {
   text-align: center;
+  color: #0fa49db5;
 }
 span.link {
   cursor: pointer;
-  color: blue;
+  color: #0fa49db5;
   text-decoration: underline;
 }
 /* menu.css */
 div.border-bottom {
   border-bottom: 1px solid black;
-  padding: 10px 0px 10px 0px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
+  
 }
 div.float-left {
   float: left;
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
 }
 div.float-right {
   float: right;
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
 }
 div.float-clear {
   clear: both;
 }
 ul.menu {
-  margin: 0px;
-  padding: 0px;
+  margin: 10px;
+  padding: 10px;
 }
 li.menu {
   display: inline;
@@ -63,16 +122,18 @@ form.search {
   margin: 0px;
 }
 input.keyword {
-  width: 150px;
+  width: 110px;
 }
 /* datatable.css */
 .datatable {
   text-align: center;
   border-collapse: collapse;
+  
 }
 /* header */
 tr:first-child.datatable {
-  background-color: #ffcc00;
+  background-color: #6dcb92;
+  
 }
 /* even rows, except header */
 tr:not(:first-child):nth-child(even).datatable {
@@ -86,4 +147,171 @@ tr:not(:first-child):nth-child(odd).datatable {
 tr:not(:first-child):hover.datatable {
   background-color: #dcfcfc;
   cursor: pointer;
+}
+/*login*/
+.bradmin {
+  background-image: url(https://vuonnhat.net.vn/wp-content/uploads/2019/12/cay-moi-tai-vuon-nhat-1.jpg);
+  background-size: cover; 
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-position: center;
+  align-items: center;
+}
+.login-box{
+  background-color: #ffeeaa;
+  color: #650fde;
+  padding: 10px;
+  border-radius: 10px;
+/*backround home*/
+}
+.bradminhome{
+  background-size: cover; 
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-position: center;
+}
+/* backround menu*/
+.brmenu{
+  background-color: rgb(188, 203, 74);
+}
+/* Màu chữ */
+.textcolor{
+  color: #05010c;
+}
+/* product show box */
+.pdbr{
+  color: #070707;
+  background-color: #2938d8;
+  background-size: cover;
+  justify-content: center;
+}
+.pdbr2{
+  color: #070707;
+  background-color: #4aa4d1;
+  background-size: cover;
+  justify-content: center;
+}
+.pdbr3{
+  color: #070707;
+  background-color: #3eba72;
+  background-size: cover;
+  justify-content: center;
+}
+.pdbr4{
+  color: #070707;
+  background-color: #d581bd;
+  background-size: cover;
+  justify-content: center;
+}
+.pdbr5{
+  color: #070707;
+  background-color: #cd8d51;
+  background-size: cover;
+  justify-content: center;
+}
+.menu{
+  background-color: #a8a58d; 
+  border: none; 
+  padding: 5px 16px; 
+  text-align: center; 
+  text-decoration: none; 
+  font-size: 16px; 
+  margin:  2px;  
+  -webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s; 
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: white; 
+  border: 2px solid rgb(205, 224, 195);
+}
+.menu-ad{
+  border: 2px solid rgb(233, 110, 72);
+}
+
+.menu:hover{
+  background-color: rgb(198, 199, 184);
+  color: rgb(99, 93, 93);
+}
+.meu-text {
+  text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+}
+.home-ad:hover{
+  background: #4aa4d1;
+}
+.cate-ad:hover{
+  background: #3eab93;
+}.pro-ad:hover{
+  background: rgb(211, 91, 215);
+}.ord-ad:hover{
+  background: #e1da10;
+}.cus-ad:hover{
+  background: #7c77d7;
+}
+
+.Out-log {
+  font-family: 'Ubuntu', sans-serif;
+  margin: 20px;
+}
+
+.lox {
+  background: rgb(149, 192, 154);
+  border-radius: 6px;
+  color: #34393a;
+  padding: 6px;
+  text-decoration: none;
+  margin: 4px;
+}
+
+.lox:hover {
+  background: red;
+}
+
+.VIP {
+  position: relative;
+  display: inline-block;
+  color: #507f95;
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
+  animation: borderAnimation 2s linear infinite, snowAnimation 2s linear infinite;
+  font-weight: bold;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.VIP::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px dashed rgba(255, 255, 255, 0.5);
+  animation: borderCrackAnimation 2s linear infinite alternate;
+}
+@keyframes borderAnimation {
+  0% {
+    text-shadow: 2px 2px 2px rgba(74, 140, 233, 0.5);
+  }
+  100% {
+    text-shadow: 4px 4px 4px rgba(105, 215, 195, 0.8);
+  }
+}
+
+@keyframes borderCrackAnimation {
+  0% {
+    border: 2px dashed rgba(12, 94, 225, 0.5);
+  }
+  100% {
+    border: 4px dashed rgba(9, 206, 228, 0);
+  }
+}
+
+@keyframes snowAnimation {
+  0%, 100% {
+    content: "";
+  }
+  50% {
+    content: "\2700";
+  }
 }

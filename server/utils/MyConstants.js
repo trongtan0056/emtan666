@@ -1,7 +1,7 @@
 const MyConstants = {
-    DB_SERVER: 'cluster0.x5b7j2t.mongodb.net',
-    DB_USER: 'hienta92',
-    DB_PASS: 'cutanklk123',
+    DB_SERVER: 'cluster.dfsp8s4.mongodb.net',
+    DB_USER: 'trongtan0056',
+    DB_PASS: 'hienta92',
     DB_DATABASE: 'shoppingonline',
     JWT_SECRET: '123456',
     JWT_EXPIRES: '360000000', // in milliseconds

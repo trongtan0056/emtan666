@@ -127,14 +127,8 @@ class Customer extends Component {
     this.setState({ orders: [], order: null });
     this.apiGetOrdersByCustID(item._id);
   }
-  lnkEmailClick(item) {
-    this.apiGetCustomerSendmail(item._id);
-  }
   trOrderClick(item) {
     this.setState({ order: item });
-  }
-  lnkDeactiveClick(item) {
-    this.apiPutCustomerDeactive(item._id, item.token);
   }
   // apis
   apiGetCustomers() {
@@ -151,6 +145,11 @@ class Customer extends Component {
       this.setState({ orders: result });
     });
   }
+  // event-handlers
+  lnkDeactiveClick(item) {
+    this.apiPutCustomerDeactive(item._id, item.token);
+  }
+  // apis
   apiPutCustomerDeactive(id, token) {
     const body = { token: token };
     const config = { headers: { 'x-access-token': this.context.token } };
@@ -163,6 +162,11 @@ class Customer extends Component {
       }
     });
   }
+  // event-handlers
+  lnkEmailClick(item) {
+    this.apiGetCustomerSendmail(item._id);
+  }
+  // apis
   apiGetCustomerSendmail(id) {
     const config = { headers: { 'x-access-token': this.context.token } };
     axios.get('/api/admin/customers/sendmail/' + id, config).then((res) => {

@@ -138,4 +138,28 @@ router.get('/customers/sendmail/:id', JwtUtil.checkToken, async function (req, r
     res.json({ success: false, message: 'Not exists customer' });
   }
 });
+//statis
+router.get('/statistics', JwtUtil.checkToken, async function (req, res) {
+  const noCategories = await CategoryDAO.selectByCount();
+  const ndProducts = await ProductDAO.selectByCount();
+  const noOrders = await OrderDAO.selectByCount();
+  const noOrdersPending = await OrderDAO.selectByCountStatus ('PENDING');
+  const noOrdersApproved = await OrderDAO.selectByCountStatus ('APPROVED ');
+  const noOrdersCanceled = await OrderDAO.selectByCountStatus ('CANCELED');
+  const noOrdersRevenue = await OrderDAO. sumTotalApproved ();
+  const noCustomers = await CustomerDAO.selectByCount();
+  res.json({
+  noCategories: noCategories,
+  noProducts: noProducts,
+  noOrders: noOrders,
+  noOrdersPending: noOrdersPending,
+  noOrdersApproved: noOrdersApproved,
+  noOrdersCanceled: noOrdersCanceled,
+  noOrdersRevenue: noOrdersRevenue,
+  noCustomers: noCustomers
+  
+  });
+});
+ 
+
 

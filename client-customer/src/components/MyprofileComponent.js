@@ -19,6 +19,12 @@ class Myprofile extends Component {
     if (this.context.token === '') return (<Navigate replace to='/login' />);
     return (
       <div className="align-center">
+        <table>
+          <tr>
+            <th className='my-prof'>
+
+            </th>
+        <th>
         <h2 className="text-center">MY PROFILE</h2>
         <form>
           <table className="align-center">
@@ -50,6 +56,9 @@ class Myprofile extends Component {
             </tbody>
           </table>
         </form>
+        </th>
+        </tr>
+        </table>
       </div>
     );
   }

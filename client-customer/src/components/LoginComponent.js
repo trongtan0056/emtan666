@@ -2,38 +2,41 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import MyContext from '../contexts/MyContext';
 import withRouter from '../utils/withRouter';
+import { toast } from 'react-toastify';
 
 class Login extends Component {
   static contextType = MyContext; // using this.context to access global state
   constructor(props) {
     super(props);
     this.state = {
-      txtUsername: 'sonkk',
+      txtUsername: 'emtan666',
       txtPassword: '123'
     };
   }
   render() {
     return (
-      <div className="align-center">
-        <h2 className="text-center">CUSTOMER LOGIN</h2>
-        <form>
-          <table className="align-center">
-            <tbody>
-              <tr>
-                <td>Username</td>
-                <td><input type="text" value={this.state.txtUsername} onChange={(e) => { this.setState({ txtUsername: e.target.value }) }} /></td>
-              </tr>
-              <tr>
-                <td>Password</td>
-                <td><input type="password" value={this.state.txtPassword} onChange={(e) => { this.setState({ txtPassword: e.target.value }) }} /></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td><input type="submit" value="LOGIN" onClick={(e) => this.btnLoginClick(e)} /></td>
-              </tr>
-            </tbody>
-          </table>
-        </form>
+      <div className='background-login-customer'>
+        <div className="login-box"> {/* Áp dụng lớp CSS cho khung đăng nhập */}
+          <h2 className="text-center cuslogin">CUSTOMER LOGIN</h2>
+          <form>
+            <table className="align-center">
+              <tbody>
+                <tr>
+                  <td className='cuslogin'>Username</td>
+                  <td><input type="text" value={this.state.txtUsername} onChange={(e) => { this.setState({ txtUsername: e.target.value }) }} /></td>
+                </tr>
+                <tr>
+                  <td className='cuslogin'>Password</td>
+                  <td><input type="password" value={this.state.txtPassword} onChange={(e) => { this.setState({ txtPassword: e.target.value }) }} /></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><input type="submit" value="LOGIN" className="btn-login-customer cuslogin" onClick={(e) => this.btnLoginClick(e)} /></td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
       </div>
     );
   }
@@ -46,7 +49,8 @@ class Login extends Component {
       const account = { username: username, password: password };
       this.apiLogin(account);
     } else {
-      alert('Please input username and password');
+      //alert('Please input username and password');
+      toast.warning('Please input user name and password');
     }
   }
   // apis
@@ -57,8 +61,10 @@ class Login extends Component {
         this.context.setToken(result.token);
         this.context.setCustomer(result.customer);
         this.props.navigate('/home');
+        toast.success("Welcome to emtan666");
       } else {
-        alert(result.message);
+        //alert(result.message);
+        toast.error(result.message);
       }
     });
   }

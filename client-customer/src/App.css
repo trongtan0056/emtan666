@@ -1,3 +1,87 @@
+/* html */
+html {
+  background-color: #f5f5dc;;
+}
+/* Lá vàng rơi */
+/* Định nghĩa keyframes animation */
+@keyframes falling-leaves {
+  0% {
+      transform: translateY(0) rotate(0);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(100vh) rotate(360deg); /* Đổi giá trị thành 100vh để di chuyển xuống hết chiều cao màn hình */
+      opacity: 0;
+  }
+}
+
+/* CSS cho lá vàng rơi */
+.falling-leaves-container {
+  position: fixed; /* Đặt container là cố định để tràn đầy cả màn hình */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Độ rộng là 100% của viewport */
+  height: 100vh; /* Chiều cao là 100% của viewport */
+  pointer-events: none; /* Tắt sự kiện click để không ảnh hưởng đến các phần tử bên dưới */
+}
+
+.falling-leaf {
+  position: absolute;
+    font-size: 20px; /* Kích thước của icon lá */
+    color: #e9a51b; /* Màu sắc của lá mùa thu */
+    animation: falling-leaves 6s linear infinite;
+}/* Điều chỉnh vị trí và tốc độ rơi cho các lá khác nhau */
+/* Điều chỉnh vị trí và tốc độ rơi cho các lá */
+.falling-leaf:nth-child(1) {
+  left: 10%;
+  animation-duration: 5s;
+}
+
+.falling-leaf:nth-child(2) {
+  left: 20%;
+  animation-duration: 7s;
+}
+
+.falling-leaf:nth-child(3) {
+  left: 30%;
+  animation-duration: 6s;
+}
+
+.falling-leaf:nth-child(4) {
+  left: 40%;
+  animation-duration: 8s;
+}
+
+.falling-leaf:nth-child(5) {
+  left: 50%;
+  animation-duration: 5s;
+}
+
+.falling-leaf:nth-child(6) {
+  left: 60%;
+  animation-duration: 7s;
+}
+
+.falling-leaf:nth-child(7) {
+  left: 70%;
+  animation-duration: 6s;
+}
+
+.falling-leaf:nth-child(8) {
+  left: 80%;
+  animation-duration: 8s;
+}
+
+.falling-leaf:nth-child(9) {
+  left: 90%;
+  animation-duration: 5s;
+}
+
+.falling-leaf:nth-child(10) {
+  left: 100%;
+  animation-duration: 7s;
+}
+
 /* styles.css */
 .body-customer {
   width: 1150px;
@@ -63,7 +147,7 @@ form.search {
   margin: 0px;
 }
 input.keyword {
-  width: 150px;
+  width: 110px;
 }
 /* datatable.css */
 .datatable {
@@ -86,4 +170,463 @@ tr:not(:first-child):nth-child(odd).datatable {
 tr:not(:first-child):hover.datatable {
   background-color: #dcfcfc;
   cursor: pointer;
+}
+
+
+/* Login Customer */
+.cuslogin {
+  font-family: 'Bookman Old Style', serif 
+}
+.background-login-customer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(https://scontent.fsgn5-6.fna.fbcdn.net/v/t39.30808-6/363801474_3588411884776758_1690706562894214138_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=730e14&_nc_ohc=21WYj8hs6c0AX-Lztm-&_nc_ht=scontent.fsgn5-6.fna&oh=00_AfByVxjamezo5UotFOEjl0WGthZp9fG14XkZEXy0MbTcOQ&oe=64C7091C);
+  background-size: cover;
+  background-position: center;
+  
+}
+
+.btn-login-customer {
+  background-color: rgb(196, 157, 99); /* Màu cam */
+  color: #fff; /* Màu chữ trắng */
+}
+
+.btn-login-customer:hover {
+  background-color: #c60; /* Màu cam tối khi hover */
+}
+
+.align-center-customer {
+  border-radius: #c60;
+}
+
+.login-box {
+  background-color: #ffeaad; /* Màu vàng nhạt */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Đổ bóng cho khung */
+}
+
+.align-center {
+  /* Nếu bạn muốn căn giữa biểu mẫu, bạn có thể sử dụng các kiểu sau */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Sign-up customer*/
+.bg-sign-up {
+  background-image: url(https://o.remove.bg/downloads/0b8a8d4d-5344-4a2f-b317-b4909dceed79/Mickey_Mouse-removebg-preview.png);
+  background-size: cover;
+  padding-right: 200px;
+}
+
+/* Tabmenu-customer */
+.tabmenu-customer {
+  background-image: url(https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/363289545_3588412034776743_2669173952192237867_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_ohc=sFi4UNHOEAMAX9_SQG4&_nc_ht=scontent.fsgn5-10.fna&oh=00_AfC6DANhUVp3qZ9IguciGjkF697KkrKwvkLgRmqnVtlpcw&oe=64C63916);
+  height: 52px; 
+  border-radius: 5px;
+  margin: 5px;
+  animation: led-border-animation 2s linear infinite;
+}
+div .menu-customer {
+background-color: #a8a58d; 
+border: none; 
+padding: 16px 32px; 
+text-align: center; 
+text-decoration: none; 
+display: inline-block;  
+font-size: 16px; 
+margin:  2px;  
+-webkit-transition-duration: 0.4s; 
+transition-duration: 0.4s; 
+cursor: pointer;
+border-radius: 4px;
+
+background-color: white; 
+border: 2px solid rgb(190, 107, 122);}
+.menu-customer:hover { 
+background-color: rgb(198, 199, 184); 
+color: white;
+}
+/* Nút Search */
+.search {
+  display: flex;
+  align-items: center;
+  background-color: #f7f7f7;
+  border: 4px solid #ccc;
+ 
+}
+
+.keyword {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 12px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.keyword::placeholder {
+  color: #abbc78;
+}
+
+.SEARCH {
+  background-color: #f9a825;
+  color: #4b0404;
+  border: 6px;
+  outline: none;
+  cursor: pointer;
+  margin-left: 5px;
+  font-size: 8px;
+}
+
+.SEARCH:hover {
+  background-color: #b36516;
+}
+/* Nút home customer*/
+.home-customer {
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #6793a9;
+  font-family: 'Lobster', cursive;
+  transition: background-image 2s;
+}
+
+.home-customer:hover {
+  background-image: linear-gradient(
+				to right,
+				rgb(51, 98, 75),
+				#485563,
+				#5c6e7a,
+				#467874
+				);
+			box-shadow: 0 4px 15px 0 rgba(195, 159, 89, 0.75);
+}
+/* Item customer */
+
+.item-customer { 
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  font-family: 'Lobster', cursive;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background-color 0.s;
+}
+.item-customer:hover { 
+  background: radial-gradient(farthest-corner at 80% 50%, #E895E3, #5ec3ee, #B6E6FA);			
+			box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+    }
+/* Đóm vàng */
+@keyframes led-border-animation {
+  0% {
+    box-shadow: 0 0 10px rgba(94, 134, 114, 0.7), 0 0 20px rgba(82, 74, 31, 0.7), 0 0 30px rgba(24, 12, 92, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(78, 115, 67, 0.7), 0 0 30px rgba(65, 60, 31, 0.7), 0 0 40px rgba(48, 68, 146, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(104, 187, 186, 0.7), 0 0 20px rgba(108, 106, 92, 0.7), 0 0 30px rgba(35, 27, 51, 0.7);
+  }
+}
+
+/* Inform-customer */
+/* Kéo sang trái */
+
+.inform-customer {
+  background-image: url(https://scontent.fsgn5-2.fna.fbcdn.net/v/t39.30808-6/363798285_3588411814776765_5736412606902417554_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=PEQMmDhg-zgAX-3zRgd&_nc_ht=scontent.fsgn5-2.fna&oh=00_AfA7yIFsXA1_vnt1AvHfz3kEGknwS4Ic_Ul2ZQPlJULLVw&oe=64C6AB3B); 
+  background-size: 100px;
+  width: 96%;
+  height: 80px;
+  border-radius: 5px;
+  margin: 13px;
+}
+/*Nút login đăng nhập*/
+.login-btn {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #9c817d;
+  color: #ffffff;
+  text-decoration: none;
+  border: 1px solid #a1a57f;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  font-family: 'Lobster', cursive;
+}
+
+
+.login-btn:hover {
+  background-image: linear-gradient(
+				to right,
+				#009245,
+				#fcee21,
+				#00a8c5,
+				#d9e021
+				);
+			box-shadow: 0 4px 15px 0 rgba(83, 176, 57, 0.75);
+
+}
+/*Nút dăng ký*/
+.signup-btn {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #beb95e;
+  color: #ffffff;
+  text-decoration: none;
+  border: 1px solid #a1a57f;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  font-family: 'Lobster', cursive;
+}
+
+
+.signup-btn:hover {
+  background-color: #d32f2f;
+}
+/*Nút active*/
+.active-btn {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #697681;
+  color: #ffffff;
+  text-decoration: none;
+  border: 1px solid #a1a57f;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.active-btn:hover {
+  background-image: linear-gradient(
+    to right,
+    #fc6076,
+    #ff9a44,
+    #ef9d43,
+    #e75516
+    );
+  box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);;
+}
+/* active bg */
+.active-bg {
+  background-image: url(https://o.remove.bg/downloads/8c7895a9-5832-4a43-9d9d-086f9eaabd3a/active_bg-removebg-preview.png);
+  padding: 90px;
+  width:300px;
+  background-size: 600px;
+}
+.color-tx {
+  color: rgb(255, 0, 0);
+  font-family: 'Lobster', cursive;
+}
+
+/*Giỏ hàng*/
+.cart-button {
+  display: inline-block;
+  background-color: #d9d3d3;
+  border: none;
+  color: #333;
+  padding: 7px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+/* Định dạng biểu tượng giỏ hàng */
+.cart-icon {
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+/* Hiệu ứng khi hover vào nút */
+.cart-button:hover {
+  background-image: linear-gradient(135deg, #4f9962, #8ac42d);
+}
+
+
+
+/* Viền chuyển động lửa */
+@keyframes fire-glow {
+  0% { box-shadow: 0 0 10px #f00, 0 0 20px #f60, 0 0 30px #f90; }
+  50% { box-shadow: 0 0 20px #f60, 0 0 30px #f90, 0 0 40px #fa0; }
+  100% { box-shadow: 0 0 10px #f00, 0 0 20px #f60, 0 0 30px #f90; }
+}
+
+.fire-border {
+  border: 5px solid transparent;
+  border-image: radial-gradient(circle, #f90, transparent);
+  border-image-slice: 1;
+  animation: fire-glow 2s linear infinite;
+}
+
+/* List Product */
+.Welcome {
+  position: relative;
+  display: inline-block;
+  color: #4a01e8f4;
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
+  animation: borderAnimation 2s linear infinite, snowAnimation 2s linear infinite;
+  font-weight: bold;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.Welcome::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px dashed rgba(255, 255, 255, 0.5);
+  animation: borderCrackAnimation 2s linear infinite alternate;
+}
+
+@keyframes borderAnimation {
+  0% {
+    text-shadow: 2px 2px 2px rgba(74, 140, 233, 0.5);
+  }
+  100% {
+    text-shadow: 4px 4px 4px rgba(105, 215, 195, 0.8);
+  }
+}
+
+@keyframes borderCrackAnimation {
+  0% {
+    border: 2px dashed rgba(12, 94, 225, 0.5);
+  }
+  100% {
+    border: 4px dashed rgba(9, 206, 228, 0);
+  }
+}
+
+@keyframes snowAnimation {
+  0%, 100% {
+    content: "";
+  }
+  50% {
+    content: "\2700";
+  }
+}
+.list-pro {
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-image: linear-gradient(to right, #B9F2FF, #FFF0E0, #B9F2FF, #FFF0E0, #B9F2FF, #FFD700);
+  border-image-slice: 1;
+  box-shadow: 0 0 20px rgba(173, 216, 230, 0.7);
+  animation: glow 2s linear infinite alternate, bounce 1s ease infinite;
+  font-family: 'Lobster', cursive;
+  color: #39978e;
+}
+
+@keyframes glow {
+  from {
+    border-image: linear-gradient(to right, #FFF0E0, #B9F2FF, #FFF0E0, #B9F2FF, #FFF0E0, #FFD700);
+  }
+  to {
+    border-image: linear-gradient(to right, #B9F2FF, #FFF0E0, #B9F2FF, #FFF0E0, #B9F2FF, #FFD700);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+
+/*BTN menu after login */
+
+.Log-out-cus {
+  font-family: 'Lobster', cursive;
+  text-decoration: none;
+  border-radius: 4px;
+  color: rgb(73, 98, 113);
+  background-color: rgb(169, 218, 221);
+}
+
+.Log-out-cus:hover {
+  background-color: rgb(231, 129, 129);
+}
+
+.my-pro-cus {
+    font-family: 'Lobster', cursive;
+    text-decoration: none;
+    border-radius: 4px;
+    color: rgb(39, 159, 186);
+    background-color: rgb(214, 203, 203);
+}
+.my-pro-cus:hover {
+  background-color: #EA5015;
+}
+
+.my-ord-cus {
+  font-family: 'Lobster', cursive;
+  text-decoration: none;
+  border-radius: 4px;
+  color: rgba(28, 27, 27, 0.453);
+  background-color: rgb(147, 226, 11);
+}
+.my-ord-cus:hover{
+  background-color: #00FF82;
+}
+
+
+/* New Product */
+.new-pro {
+  padding: 15px 40px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-image: linear-gradient(to right, #B9F2FF, #FFF0E0, #B9F2FF, #FFF0E0, #B9F2FF, #FFD700);
+  border-image-slice: 1;
+  box-shadow: 0 0 20px rgba(173, 216, 230, 0.7);
+  animation: glow 2s linear infinite alternate, bounce 1s ease infinite;
+  font-family: 'Lobster', cursive;
+  color: #9f2db5;
+}
+
+.hot-pro {
+  position: relative;
+  display: inline-block;
+  color: #d68324f4;
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
+  animation: borderAnimation 2s linear infinite, snowAnimation 2s linear infinite;
+  font-weight: bold;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.hot-pro::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px dashed rgba(255, 255, 255, 0.5);
+  animation: borderCrackAnimation 2s linear infinite;
+}
+
+/* Thay đổi kiểu hiển thị của các sản phẩm thành hàng ngang */
+.product-container {
+  display: flex;
+}
+
+/* Khoảng cách giữa các sản phẩm */
+.product-item {
+  margin: 10px;
+}
+
+/* Để các sản phẩm không tràn qua phần tử cha */
+.align-center {
+  text-align: center;
+}
+
+/*MyProfile update*/
+.my-prof {
+  background-image: url(https://o.remove.bg/downloads/6f7bad39-e5c0-4299-8147-f9e9e9c0dff8/my_profile-removebg-preview.png);
+  padding: 100px;
 }

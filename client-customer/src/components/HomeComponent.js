@@ -13,10 +13,11 @@ class Home extends Component {
   render() {
     const newprods = this.state.newprods.map((item) => {
       return (
-        <div key={item._id} className="inline">
+        <div key={item._id} className="product-item">
           <figure>
-          <Link to={'/product/' + item._id}><img img src={"data:image/jpg;base64," + item.image} width="300px" height="300px" alt=""  /></Link>
-            
+            <Link to={'/product/' + item._id}>
+              <img src={"data:image/jpg;base64," + item.image} width="300px" height="300px" alt="" />
+            </Link>
             <figcaption className="text-center">{item.name}<br />Price: {item.price}</figcaption>
           </figure>
         </div>
@@ -24,25 +25,31 @@ class Home extends Component {
     });
     const hotprods = this.state.hotprods.map((item) => {
       return (
-        <div key={item._id} className="inline">
+        <div key={item._id} className="product-item">
           <figure>
-          <Link to={'/product/' + item._id}><img src={"data:image/jpg;base64," + item.image} width="300px" height="300px" alt="" /></Link>
-        
+            <Link to={'/product/' + item._id}>
+              <img src={"data:image/jpg;base64," + item.image} width="300px" height="300px" alt="" />
+            </Link>
             <figcaption className="text-center">{item.name}<br />Price: {item.price}</figcaption>
           </figure>
         </div>
       );
     });
+
     return (
       <div>
         <div className="align-center">
-          <h2 className="text-center">NEW PRODUCTS</h2>
-          {newprods}
+          <h2 className="text-center new-pro">NEW PRODUCTS</h2>
+          <div className="product-container">
+            {newprods}
+          </div>
         </div>
         {this.state.hotprods.length > 0 ?
           <div className="align-center">
-            <h2 className="text-center">HOT PRODUCTS</h2>
-            {hotprods}
+            <h2 className="text-center hot-pro">HOT PRODUCTS</h2>
+            <div className="product-container">
+              {hotprods}
+            </div>
           </div>
           : <div />}
       </div>

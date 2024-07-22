@@ -16,13 +16,13 @@ class Product extends Component {
   }
   render() {
     const prods = this.state.products.map((item) => {
-      return (
+      return ( 
         <tr key={item._id} className="datatable" onClick={() => this.trItemClick(item)}>
-          <td>{item._id}</td>
-          <td>{item.name}</td>
-          <td>{item.price}</td>
-          <td>{new Date(item.cdate).toLocaleString()}</td>
-          <td>{item.category.name}</td>
+          <td className="pdbr">{item._id}</td>
+          <td className="pdbr2">{item.name}</td>
+          <td className="pdbr3">{item.price}</td>
+          <td className="pdbr4">{new Date(item.cdate).toLocaleString()}</td>
+          <td className="pdbr5">{item.category.name}</td>
           <td><img src={"data:image/jpg;base64," + item.image} width="100px" height="100px" alt="" /></td>
         </tr>
       );
@@ -35,7 +35,7 @@ class Product extends Component {
       }
     });
     return (
-      <div>
+      <div className="bradminhome">
         <div className="float-left">
           <h2 className="text-center">PRODUCT LIST</h2>
           <table className="datatable" border="1">
@@ -61,8 +61,8 @@ class Product extends Component {
       </div>
     );
   }
-  updateProducts = (products, noPages, curPage) => { // arrow-function
-    this.setState({ products: products, noPages: noPages, curPage: curPage });
+  updateProducts = (products, noPages) => { // arrow-function
+    this.setState({ products: products, noPages: noPages });
   }
   componentDidMount() {
     this.apiGetProducts(this.state.curPage);

@@ -22,7 +22,7 @@ class Category extends Component {
       );
     });
     return (
-      <div>
+      <div className="bradminhome">
         <div className="float-left">
           <h2 className="text-center">CATEGORY LIST</h2>
           <table className="datatable" border="1">
